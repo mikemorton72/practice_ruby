@@ -90,8 +90,3 @@ while true
 
   p store_inventory
 end
-
-
-
-
-
