@@ -1,8 +1,9 @@
 
 class Store_Item
-  attr_reader :uid, :description, :price, :category
-  attr_writer :uid, :description, :price, :category
-  
+  attr_accessor :uid, :description, :price, :category #this can substitute for the two commands below.c
+  # attr_reader :uid, :description, :price, :category
+  # attr_writer :uid, :description, :price, :category
+
   def initialize(input_options)
     @uid = input_options[:uid]
     @description = input_options[:description]
