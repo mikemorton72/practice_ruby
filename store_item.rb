@@ -1,42 +1,13 @@
 
 class Store_Item
+  attr_reader :uid, :description, :price, :category
+  attr_writer :uid, :description, :price, :category
+  
   def initialize(input_options)
     @uid = input_options[:uid]
     @description = input_options[:description]
     @category = input_options[:category]
     @price = input_options[:price]
-  end
-
-  def uid
-    return @uid
-  end
-
-  def description
-    return @description
-  end
-
-  def category
-    return @category
-  end
-
-  def price
-    return @price
-  end
-
-  def uid=(input_uid)
-    @uid = input_uid
-  end
-
-  def description=(input_description)
-    @description = input_description
-  end
-
-  def category=(input_category)
-    @category = input_category
-  end
-
-  def price=(input_price)
-    @price = input_price
   end
 
   def info
