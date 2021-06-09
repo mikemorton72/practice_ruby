@@ -1,10 +1,10 @@
 
 class Store_Item
-  def initialize(input_uid, input_description, input_category, input_price)
-    @uid = input_uid
-    @description = input_description
-    @category = input_category
-    @price = input_price
+  def initialize(input_options)
+    @uid = input_options[:uid]
+    @description = input_options[:description]
+    @category = input_options[:category]
+    @price = input_options[:price]
   end
 
   def uid
@@ -44,8 +44,7 @@ class Store_Item
   end
 end
 
-
-item1 = Store_Item.new("1", "coffee", "beverage", 3.00)
+item1 = Store_Item.new(uid: "1", description: "coffee", category: "beverage", price: 3.00)
 p item1.info
 p "changing price to 2"
 item1.price = 2
@@ -60,8 +59,7 @@ p "changing UID to 99"
 item1.uid = 99
 p item1.info
 
-
-item2 = Store_Item.new("2", "tea", "beverage", 2.50)
-#p item2.info 
+item2 = Store_Item.new(uid: "2", description: "tea", category: "beverage", price: 2.50)
+p item2.info 
 
 inventory = []
