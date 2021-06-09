@@ -1,5 +1,7 @@
 #model an employee using a class
 class Employee
+  attr_reader :first_name
+  attr_writer :first_name
   def initialize(input_options)
     @first_name = input_options[:first_name]
     @last_name = input_options[:last_name]
@@ -16,14 +18,14 @@ class Employee
   end
 
   #reader/getter
-  def first_name
-    @first_name #ruby has implicit return. The last line of the function is returned if no return statement is included
-  end
+  # def first_name....see attr_reader, it does the same thing
+  #   @first_name #ruby has implicit return. The last line of the function is returned if no return statement is included
+  # end
 
-  #writer/setter
-  def first_name=(input_first_name)
-    @first_name = input_first_name
-  end
+  #writer/setter...see attr_writer, it does the same thing
+  # def first_name=(input_first_name)
+  #   @first_name = input_first_name
+  # end
 
 end
 
