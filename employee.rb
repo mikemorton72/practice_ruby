@@ -1,10 +1,10 @@
 #model an employee using a class
 class Employee
-  def initialize(input_first_name, input_last_name, input_active, input_salary)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @active = input_active
-    @salary = input_salary
+  def initialize(input_options)
+    @first_name = input_options[:first_name]
+    @last_name = input_options[:last_name]
+    @active = input_options[:active]
+    @salary = input_options[:salary]
   end
   
   def print_info
@@ -27,15 +27,15 @@ class Employee
 
 end
 
-employee_1 = Employee.new("Majora","Carter",true,80_000)
-# employee_1.print_info
-# employee_1.give_annual_raise
-# employee_1.print_info
+employee_1 = Employee.new({first_name: "Majora", last_name: "Carter", salary: 80_000, active: true})
+employee_1.print_info
+employee_1.give_annual_raise
+employee_1.print_info
 p employee_1.first_name
 employee_1.first_name = "Jamie" #weird syntax for a function
 p employee_1.first_name
 
 
-employee_2 = Employee.new("Danilo", "Campos", false, 70_000)
+employee_2 = Employee.new(first_name: "Danilo", last_name: "Campos", active: false, salary: 70_000) #ruby can interpret a hash input wihtout curly braces...
 employee_2.print_info
 
