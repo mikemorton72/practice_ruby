@@ -16,16 +16,14 @@ array.each {|inner_hash| hash[inner_hash[:id]] = inner_hash}
 #  3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
 #     For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
 string = "bookkeeper"
-letter_hash = Hash.new(0) #this makes default value of an undefinied key = 0
-string.chars.each {|letter| letter_hash[letter] += 1}
+letter_hash = string.chars.tally
 # p letter_hash
 
 
 #  4. Convert a hash into an array of arrays.
 #     For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
 hash = {"chair" => 100, "book" => 14}
-array = []
-hash.each {|k,v| array << [k, v]}
+array = hash.to_a
 # p array
 
 
@@ -40,8 +38,7 @@ hash.each {|k, v| array << {id: k, name: v[:name], age: v[:age]}}
 #  6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #     For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
 array = ["do", "or", "do", "not"]
-word_hash = Hash.new(0)
-array.each {|word| word_hash[word] += 1}
+word_hash = array.tally
 # p word_hash
 
 
